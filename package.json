@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "swiftfeedback",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "firebase": "^7.19.1",
     "next": "9.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/iamsaumya/swiftfeedback.git",
+  "author": "Saumya Pandey <sp160899@gmail.com>",
+  "license": "MIT"
 }
