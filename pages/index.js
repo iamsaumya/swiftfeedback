@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { useAuth } from '@/lib/auth';
-import { Button, Heading, Text, Code, Icon, Flex } from '@chakra-ui/core';
+import { Button, Icon, Flex } from '@chakra-ui/core';
+import EmptyState from '@/components/EmptyState';
+
 const Home = () => {
   const auth = useAuth();
   return (
@@ -8,10 +10,14 @@ const Home = () => {
       <Head>
         <title>Swift Feedback</title>
       </Head>
-
-      <Icon name="logo" size="64px" />
-      <Button onClick={() => auth.signinwithGithub()}>Sign In</Button>
-      {auth?.user && <Button onClick={() => auth.signout()}>Sign out</Button>}
+      {!auth?.user ? (
+        <>
+          <Icon name="logo" size="64px" />
+          <Button onClick={() => auth.signinwithGithub()}>Sign In</Button>
+        </>
+      ) : (
+        <EmptyState />
+      )}
     </Flex>
   );
 };
