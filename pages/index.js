@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useAuth } from '../lib/auth';
+import { useAuth } from '@/lib/auth';
 import { Button, Heading, Text, Code } from '@chakra-ui/core';
 const Home = () => {
   const auth = useAuth();
